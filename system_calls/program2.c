@@ -7,7 +7,6 @@ int main() {
 
     // Check if fork was successful
     if (child_pid == -1) {
-        // Error occurred
         perror("fork");
         return 1;
     }
