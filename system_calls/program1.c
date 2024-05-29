@@ -31,7 +31,7 @@ int main() {
         close(fd2);
         return 1;
     }
-    buffer[bytes_read] = '\0'; // Null terminate the string
+    buffer[bytes_read] = '\0';
     printf("Read from fd1: %s\n", buffer);
 
     // Read from the duplicated file descriptor
@@ -42,7 +42,7 @@ int main() {
         close(fd2);
         return 1;
     }
-    buffer[bytes_read] = '\0'; // Null terminate the string
+    buffer[bytes_read] = '\0';
     printf("Read from fd2: %s\n", buffer);
 
     // Close file descriptors
