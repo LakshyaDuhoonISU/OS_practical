@@ -31,7 +31,7 @@ int main() {
         // Get message from user
         printf("Enter message to send to server (type 'exit' to quit): ");
         fgets(buffer, BUFFER_SIZE, stdin);
-        buffer[strcspn(buffer, "\n")] = '\0';  // Remove the newline character
+        buffer[strcspn(buffer, "\n")] = '\0';
 
         // Send message to the server
         sendto(client_socket, buffer, strlen(buffer), 0, (const struct sockaddr *) &server_address, server_address_len);
