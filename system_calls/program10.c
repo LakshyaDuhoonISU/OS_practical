@@ -19,7 +19,6 @@ int main() {
 
     // Infinite loop to keep the program running
     while (1) {
-        // Do nothing, waiting for SIGINT
     }
 
     return 0;
