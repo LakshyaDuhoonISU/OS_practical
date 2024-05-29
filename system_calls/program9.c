@@ -25,7 +25,7 @@ int main() {
     } else {
         // Parent process
         printf("Parent process waiting for the child to finish...\n");
-        wait(NULL); // Wait for the child to finish
+        wait(NULL);
         printf("Child process finished execution.\n");
     }
 
