@@ -30,7 +30,7 @@ int main() {
     // Get the message to send to the server
     printf("Enter message to send to server: ");
     fgets(buffer, BUFFER_SIZE, stdin);
-    buffer[strcspn(buffer, "\n")] = '\0'; // Remove the newline character
+    buffer[strcspn(buffer, "\n")] = '\0';
 
     // Send the message to the server
     bytes_sent = sendto(client_socket, buffer, strlen(buffer), 0, (struct sockaddr*)&server_addr, addr_len);
@@ -48,7 +48,7 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
-    buffer[bytes_received] = '\0'; // Null-terminate the received data
+    buffer[bytes_received] = '\0';
     printf("Received echoed message from server: %s\n", buffer);
 
     close(client_socket);
