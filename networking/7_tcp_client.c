@@ -52,7 +52,7 @@ int main() {
 
     printf("Enter the file name to request: ");
     fgets(file_name, BUFFER_SIZE, stdin);
-    file_name[strcspn(file_name, "\n")] = '\0'; // Remove the newline character
+    file_name[strcspn(file_name, "\n")] = '\0';
 
     request_file(file_name);
 
