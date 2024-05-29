@@ -6,14 +6,14 @@
 int main() {
     int file;
 
-    // Creating and opening the file for writing
+    
     file = open("example.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
     if (file == -1) {
         perror("Error creating file");
         return EXIT_FAILURE;
     }
 
-    // Writing some content to the file
+    
     if (dprintf(file, "This is a line of text.\n") < 0 ||
         dprintf(file, "This is another line of text.\n") < 0) {
         perror("Error writing to file");
@@ -21,20 +21,20 @@ int main() {
         return EXIT_FAILURE;
     }
 
-    // Closing the file
+    
     if (close(file) != 0) {
         perror("Error closing file");
         return EXIT_FAILURE;
     }
 
-    // Reopening the file for reading
+    
     file = open("example.txt", O_RDONLY);
     if (file == -1) {
         perror("Error opening file");
         return EXIT_FAILURE;
     }
 
-    // Reading and printing the content of the file
+
     char buffer[256];
     ssize_t bytesRead;
     while ((bytesRead = read(file, buffer, sizeof(buffer))) > 0) {
@@ -50,7 +50,7 @@ int main() {
         return EXIT_FAILURE;
     }
 
-    // Closing the file again
+    
     if (close(file) != 0) {
         perror("Error closing file");
         return EXIT_FAILURE;
