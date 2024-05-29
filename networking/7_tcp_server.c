@@ -20,7 +20,7 @@ void handle_client(int client_socket) {
         close(client_socket);
         return;
     }
-    file_name[bytes_read] = '\0'; // Null-terminate the file name
+    file_name[bytes_read] = '\0';
 
     // Try to open the file
     file = fopen(file_name, "rb");
