@@ -20,7 +20,7 @@ int main() {
 
     // Infinite loop to keep the program running
     while (1) {
-        sleep(1); // Sleep for 1 second
+        sleep(1);
     }
 
     return 0;
