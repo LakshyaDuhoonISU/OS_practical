@@ -6,25 +6,21 @@
 #include <string.h>
 
 int main(int argc, char *argv[]) {
-    // Check if a file path is provided as a command-line argument
     if (argc != 2) {
         fprintf(stderr, "Usage: %s <file_path>\n", argv[0]);
         exit(EXIT_FAILURE);
     }
 
-    // Path to the file
     const char *file_path = argv[1];
 
     // Structure to store file status
     struct stat file_stat;
 
-    // Use stat system call to get file status
     if (stat(file_path, &file_stat) == -1) {
         fprintf(stderr, "Failed to get file status: %s\n", strerror(errno));
         exit(EXIT_FAILURE);
     }
 
-    // Print file status information
     printf("File: %s\n", file_path);
     printf("Size: %lld bytes\n", file_stat.st_size);
     printf("Permissions: ");
