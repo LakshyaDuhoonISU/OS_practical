@@ -48,7 +48,7 @@ void handle_client(int client_socket) {
         close(client_socket);
         return;
     }
-    file_name[bytes_read] = '\0'; // Null-terminate the file name
+    file_name[bytes_read] = '\0';
 
     // Create the full path to the requested file
     snprintf(file_path, BUFFER_SIZE, "%s/%s", FILE_DIRECTORY, file_name);
