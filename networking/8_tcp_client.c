@@ -35,9 +35,9 @@ void request_file(const char *file_name) {
     // Receive the list of available files from the server
     printf("Available files:\n");
     while ((bytes_read = recv(client_socket, buffer, BUFFER_SIZE - 1, 0)) > 0) {
-        buffer[bytes_read] = '\0'; // Null-terminate the received data
+        buffer[bytes_read] = '\0';
         printf("%s", buffer);
-        if (bytes_read < BUFFER_SIZE - 1) break; // Check if we received all data
+        if (bytes_read < BUFFER_SIZE - 1) break;
     }
 
     // Send the file name to the server
@@ -60,7 +60,7 @@ int main() {
 
     printf("Enter the file name to request: ");
     fgets(file_name, BUFFER_SIZE, stdin);
-    file_name[strcspn(file_name, "\n")] = '\0'; // Remove the newline character
+    file_name[strcspn(file_name, "\n")] = '\0';
 
     request_file(file_name);
 
