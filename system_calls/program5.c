@@ -5,7 +5,8 @@
 #define BUFFER_SIZE 1024
 
 int main() {
-    int pipe_fds[2]; // File descriptors for the pipe
+    // File descriptors for the pipe
+    int pipe_fds[2]; 
 
     // Create the pipe
     if (pipe(pipe_fds) == -1) {
@@ -13,7 +14,8 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
-    pid_t child_pid = fork(); // Fork a child process
+    // Fork a child process
+    pid_t child_pid = fork(); 
 
     if (child_pid == -1) {
         perror("fork");
@@ -21,8 +23,8 @@ int main() {
     }
 
     if (child_pid == 0) {
-        // Child process
-        close(pipe_fds[1]); // Close the write end of the pipe
+        // Close the write end of the pipe
+        close(pipe_fds[1]); 
 
         char buffer[BUFFER_SIZE];
         ssize_t num_bytes_read;
@@ -36,10 +38,11 @@ int main() {
 
         printf("Child process received message from parent: %s\n", buffer);
 
-        close(pipe_fds[0]); // Close the read end of the pipe
+        // Close the read end of the pipe
+        close(pipe_fds[0]); 
     } else {
-        // Parent process
-        close(pipe_fds[0]); // Close the read end of the pipe
+        // Close the read end of the pipe
+        close(pipe_fds[0]); 
 
         char message[] = "Hello from parent process!";
         
@@ -49,7 +52,8 @@ int main() {
             exit(EXIT_FAILURE);
         }
 
-        close(pipe_fds[1]); // Close the write end of the pipe
+        // Close the write end of the pipe
+        close(pipe_fds[1]); 
     }
 
     return 0;
