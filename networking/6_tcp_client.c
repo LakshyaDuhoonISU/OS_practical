@@ -37,7 +37,7 @@ int main() {
         // Get number from user
         printf("Enter number to send to server (type 'exit' to quit): ");
         fgets(buffer, BUFFER_SIZE, stdin);
-        buffer[strcspn(buffer, "\n")] = '\0';  // Remove the newline character
+        buffer[strcspn(buffer, "\n")] = '\0';
 
         // Send number to the server
         write(client_socket, buffer, strlen(buffer));
