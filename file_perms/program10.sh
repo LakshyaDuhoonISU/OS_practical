@@ -2,13 +2,11 @@
 
 # Script to create a backup of a directory
 
-# Function to display usage
 usage() {
   echo "Usage: $0 directory_to_backup"
   exit 1
 }
 
-# Check if the correct number of arguments is provided
 if [ "$#" -ne 1 ]; then
   usage
 fi
@@ -22,7 +20,6 @@ if [ ! -d "$DIR_TO_BACKUP" ]; then
   exit 1
 fi
 
-# Get the base name of the directory to use in the backup file name
 BASE_NAME=$(basename "$DIR_TO_BACKUP")
 
 # Create a timestamp
