@@ -9,7 +9,7 @@
 void sem_wait(int sem_id) {
     struct sembuf sem_op;
     sem_op.sem_num = 0;
-    sem_op.sem_op = -1; // Decrement semaphore value by 1
+    sem_op.sem_op = -1;
     sem_op.sem_flg = 0;
     semop(sem_id, &sem_op, 1);
 }
@@ -18,7 +18,7 @@ void sem_wait(int sem_id) {
 void sem_signal(int sem_id) {
     struct sembuf sem_op;
     sem_op.sem_num = 0;
-    sem_op.sem_op = 1; // Increment semaphore value by 1
+    sem_op.sem_op = 1;
     sem_op.sem_flg = 0;
     semop(sem_id, &sem_op, 1);
 }
@@ -53,19 +53,19 @@ int main() {
         exit(1);
     } else if (pid == 0) {
         // Child process
-        sem_wait(sem_id); // Wait for semaphore
+        sem_wait(sem_id);
         printf("Child process: Inside critical section\n");
-        sleep(2); // Simulate some work
+        sleep(2);
         printf("Child process: Exiting critical section\n");
-        sem_signal(sem_id); // Signal semaphore
+        sem_signal(sem_id);
     } else {
         // Parent process
-        sem_wait(sem_id); // Wait for semaphore
+        sem_wait(sem_id);
         printf("Parent process: Inside critical section\n");
-        sleep(2); // Simulate some work
+        sleep(2);
         printf("Parent process: Exiting critical section\n");
-        sem_signal(sem_id); // Signal semaphore
-        wait(NULL); // Wait for child to finish
+        sem_signal(sem_id);
+        wait(NULL);
     }
 
     // Delete the semaphore
