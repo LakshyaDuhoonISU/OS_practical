@@ -7,17 +7,17 @@
 
 int main() {
     int file;
-    char buffer[NUM_BYTES + 1]; // +1 for null-terminator
+    char buffer[NUM_BYTES + 1];
     ssize_t bytesRead;
 
-    // Open the file in read-only mode
+    
     file = open("dummy.txt", O_RDONLY);
     if (file == -1) {
         perror("Error opening file");
         return EXIT_FAILURE;
     }
 
-    // Read the first NUM_BYTES bytes from the file
+    
     bytesRead = read(file, buffer, NUM_BYTES);
     if (bytesRead < NUM_BYTES) {
         if (bytesRead == 0) {
@@ -29,13 +29,13 @@ int main() {
         }
     }
 
-    // Null-terminate the buffer to make it a valid string
+
     buffer[bytesRead] = '\0';
 
-    // Print the read bytes
+
     printf("First %d bytes: %s\n", NUM_BYTES, buffer);
 
-    // Close the file
+    
     close(file);
 
     return EXIT_SUCCESS;
