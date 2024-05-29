@@ -63,7 +63,7 @@ int main() {
                 exit(EXIT_FAILURE);
             }
 
-            buffer[bytes_received] = '\0'; // Null-terminate the received data
+            buffer[bytes_received] = '\0';
             printf("Received message from client: %s\n", buffer);
 
             // Echo the message back to the client
