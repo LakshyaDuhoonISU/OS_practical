@@ -97,7 +97,7 @@ int main() {
             perror("Thread creation failed");
             free(new_sock);
         } else {
-            pthread_detach(client_thread);  // Detach the thread so that it cleans up after itself
+            pthread_detach(client_thread); 
         }
     }
 
