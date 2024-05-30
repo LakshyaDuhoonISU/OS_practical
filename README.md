@@ -15,7 +15,7 @@ Text Processing
    ![image](https://github.com/LakshyaDuhoonISU/OS_practical/assets/142775753/b1ee791c-9376-4bce-ae09-36a576e04697)
  
 8. Write a SED command to delete lines containing the word "error" in a file.
-    
+    ![image](https://github.com/LakshyaDuhoonISU/OS_practical/assets/142775753/b6973cce-077a-4139-afbd-f5a83712ee2f)
 
 9. Write a SED command to insert a line of text before the third line of a file.
     ![image](https://github.com/LakshyaDuhoonISU/OS_practical/assets/142775753/79afa375-f9f5-4d65-a626-e6ec06c43475)
