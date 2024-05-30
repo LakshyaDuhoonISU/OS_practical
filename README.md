@@ -5,7 +5,7 @@ Text Processing
 2. Write an AWK command to print the second column of a file.
    ![image](https://github.com/LakshyaDuhoonISU/OS_practical/assets/142775753/ed410285-1f24-40ad-b6c6-427f564a2e27)
 
-3. Write an AWK command to print lines where the third column is greater than 50.
+3.Write an AWK command to print lines where the third column is greater than 50.
    ![image](https://github.com/LakshyaDuhoonISU/OS_practical/assets/142775753/fa6a8a3a-522e-47c6-a977-e7116adda00c)
 
 6. Demonstrate any 5 SED commands on ZSH shell.
